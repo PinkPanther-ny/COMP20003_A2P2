@@ -35,7 +35,7 @@ DATA_FILE = data/CLUEdata2018_random.csv
 OUTPUT_FILE = data/outputfile
 KEYWORD_FILE = data/queryfile
 
-all: build run clean #show
+all: build run clean show
 
 build: $(DEFAULT)
 
@@ -49,9 +49,11 @@ run: build
 show:
 	cat $(OUTPUT_FILE)
 
-valgrind: build clean
+valgrind: build
+	rm -f $(OBJECT_FILES) $(PART1) $(PART2)
 	$(cls_cmd)
 	$(VALGRIND) $(VALGRINDFLAG) ./$(DEFAULT) $(DATA_FILE) $(OUTPUT_FILE) < $(KEYWORD_FILE)
+    
 
 $(DEFAULT): $(OBJECT_FILES)
 	$(CC) -o $@ $^ $(LDFLAGS)

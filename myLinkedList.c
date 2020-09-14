@@ -149,7 +149,7 @@ KDT_t * compute_nearest(KDT_t * keyParent, Point_t key, double *nearest){
             absDistance = fabs(curRoot_p.y - key.y);
         }
 
-        if ( absDistance < (*nearest) ){
+        if ( absDistance <= (*nearest) ){
             keyParent = keyParent->parent;
 
         }else{
@@ -181,10 +181,10 @@ KDT_t * VLR_search(KDT_t * keyParent, Point_t key,
         result = keyParent;
 
     }
-    if(fabs(point_cmp(keyParent->left, key))<*nearest ||1){
+    if(fabs(point_cmp(keyParent->left, key))<*nearest){
         result = VLR_search(keyParent->left, key, nearest, result, compareTime);
     }
-    if(fabs(point_cmp(keyParent->right, key))<*nearest ||1) {
+    if(fabs(point_cmp(keyParent->right, key))<*nearest) {
         result = VLR_search(keyParent->right, key, nearest, result, compareTime);
     }
     return result;
@@ -288,3 +288,30 @@ void LRV_Free(KDT_t * root){
 }
 
 /********************************************************************/
+
+
+/* Search the item with nearest location recursively */
+void STG2VLR_search(KDT_t * keyParent, Point_t key, 
+                   double *nearest, int *compareTime, FILE * fp){
+    
+    if (keyParent==NULL){
+        // no compare here.
+        return;
+    }
+    double curDistance = distanceTo(
+        key,
+        getClueLocation(keyParent->listData->head->data)
+    );
+
+    *compareTime += 1;
+    if ( curDistance - *nearest <= ROUNDING_ERROR_MARGIN){
+        fwriteLinkedList(keyParent->listData, fp, key);
+
+    }
+    if(fabs(point_cmp(keyParent->left, key))<*nearest){
+        STG2VLR_search(keyParent->left, key, nearest, compareTime, fp);
+    }
+    if(fabs(point_cmp(keyParent->right, key))<*nearest) {
+        STG2VLR_search(keyParent->right, key, nearest, compareTime, fp);
+    }
+}

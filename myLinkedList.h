@@ -58,4 +58,7 @@ void freeLinkedList(List_t *list);
 void freeListNode(List_t *list);
 void LRV_Free(KDT_t * root);
 void freeKDT_Node(KDT_t * root);
+
+void STG2VLR_search(KDT_t * keyParent, Point_t key, 
+                   double *nearest, int *compareTime, FILE * fp);
 #endif

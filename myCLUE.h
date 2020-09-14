@@ -33,7 +33,7 @@
 #define CHAR_QUOTE '\"'
 #define CHAR_NEWLINE '\n'
 
-#define ROUNDING_ERROR_MARGIN 0.00000001
+#define ROUNDING_ERROR_MARGIN 0.000001
 
 typedef struct CLUE{
     // Say it's better to store as string type
