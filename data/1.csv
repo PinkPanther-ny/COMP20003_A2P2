@@ -1,0 +1,8 @@
+Census year,Block ID,Property ID,Base property ID,CLUE small area,Trading name,Industry (ANZSIC4) code,Industry (ANZSIC4) description,x coordinate,y coordinate,Location
+2018,791,111416,110496,Port Melbourne,ACS,6923,Enginervices,144.9012645,-37.82998456,"(11, 10)"
+2018,793,670592,670592,Port Melbourne,Par Setd,5211,Steices,144.9004092,-37.83554811,"(4, 7)"
+2018,791,110498,110496,Port Melbourne,Yamaty,9419,Otherance,144.9012645,-37.82998456,"(16, 10)"
+2018,791,110497,110496,Port Melbourne,Inttek,625,Sciervices,144.9012645,-37.82998456,"(7, 15)"
+2018,791,110497,110496,Port Melbourne,Inttek,625,Sciervices,144.9012645,-37.82998456,"(9, 4)"
+2018,791,111216,110496,Port Melbourne,Vacant,0,Vacant Space,144.9012645,-37.82998456,"(14, 11)"
+2018,791,111417,110496,Port Melbourne,Vacant,0,Vacant Space,144.9012645,-37.82998456,"(15, 3)"

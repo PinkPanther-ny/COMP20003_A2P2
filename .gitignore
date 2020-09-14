@@ -1,0 +1,12 @@
+*
+
+!*.c
+!*.h
+!*.csv
+!Makefile
+!README.md
+!*.txt
+!.gitignore
+!data/
+!*.pdf
+!queryfile
